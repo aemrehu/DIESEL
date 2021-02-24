@@ -1,10 +1,13 @@
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
+kulutus = 6.5
+
 def scrapy():
-    PATH = "C:\Program Files (x86)\chromedriver.exe"
-    driver = webdriver.Chrome(PATH)
+    PATH = "C:\Program Files (x86)\phantomjs.exe"
+    driver = webdriver.PhantomJS(PATH)
 
     driver.get("https://www.polttoaine.net/")
     time.sleep(1)
@@ -16,7 +19,7 @@ def scrapy():
     return keskih
 
 def laske_hinta(kilsat):
-    summa = (6.0 / 100) * kilsat * keskihinta
+    summa = (kulutus / 100) * kilsat * keskihinta
     return summa
 
 def kysy_matka():
@@ -44,7 +47,7 @@ if __name__ == "__main__":
     print("    (Syötä 0km lopettaaksesi.)")
     print("")
     print("    Diesel: {}€/L".format(keskihinta))
-    print("    Kulutus 5.8L/100km")
+    print("    Kulutus {}L/100km".format(kulutus))
     print("")
     while True:
         matka = kysy_matka()
