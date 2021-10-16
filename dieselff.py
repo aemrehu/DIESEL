@@ -7,6 +7,8 @@ kulutus = 6.2
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
+cmd = 'mode 70,20'
+
 def scrapy():
     options = ffopt()
     options.add_argument("--headless")
@@ -46,6 +48,7 @@ def kysy_kulutus():
             return luku
 
 if __name__ == "__main__":
+    os.system(cmd)
     print("")
     print("  Getting fuel cost..")
 
