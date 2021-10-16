@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as ffopt
 import time
+import os
 
 kulutus = 6.2
+
+clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
 def scrapy():
     options = ffopt()
@@ -44,15 +47,16 @@ def kysy_kulutus():
 
 if __name__ == "__main__":
     print("")
-    print("  Initializing..")
+    print("  Getting fuel cost..")
 
     keskihinta = float(scrapy())
-
+    clearConsole()
     print("")
-    print("  Loading..")
-    time.sleep(1)
+    print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
+    print("    ajettuna käyttäen ajantasaista dieselin keskihintaa:")
     print("")
     kulutus = kysy_kulutus()
+    clearConsole()
     print("")
     print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
     print("    ajettuna käyttäen ajantasaista dieselin keskihintaa:")
@@ -67,7 +71,7 @@ if __name__ == "__main__":
             break
         else:
             hinta = float(laske_hinta(matka))
-            time.sleep(1)
+            time.sleep(0.01)
             print("")
             print("      Matkasi hinta on noin {:.2f}€".format(hinta))
             print("")

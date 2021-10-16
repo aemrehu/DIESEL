@@ -184,3 +184,103 @@ JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.js
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1634406724495	geckodriver	INFO	Listening on 127.0.0.1:54748
+1634406727537	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileF3fsP0"
+*** You are running in headless mode.
+1634406727913	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileF3fsP0\\search.json.mozlz4", (void 0)))
+1634406729347	Marionette	INFO	Listening on port 54758
+1634406729607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1634406732904	Marionette	INFO	Stopped listening on port 54758
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\aemre\AppData\Local\Temp\rust_mozprofileF3fsP0\protections.sqlite
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1634406789875	geckodriver	INFO	Listening on 127.0.0.1:56508
+1634406792940	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileMo8Kq1"
+*** You are running in headless mode.
+1634406793364	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileMo8Kq1\\search.json.mozlz4", (void 0)))
+1634406794767	Marionette	INFO	Listening on port 56516
+1634406794998	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1634406797646	Marionette	INFO	Stopped listening on port 56516
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1634406944690	geckodriver	INFO	Listening on 127.0.0.1:64464
+1634406947735	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileMoUONe"
+*** You are running in headless mode.
+1634406948130	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileMoUONe\\search.json.mozlz4", (void 0)))
+1634406949549	Marionette	INFO	Listening on port 64472
+1634406949802	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1634406952683	Marionette	INFO	Stopped listening on port 64472
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390076,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\aemre\AppData\Local\Temp\rust_mozprofileMoUONe\protections.sqlite
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1634406996660	geckodriver	INFO	Listening on 127.0.0.1:65073
+1634406999723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileXG4qs3"
+*** You are running in headless mode.
+1634407000112	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofileXG4qs3\\search.json.mozlz4", (void 0)))
+1634407001592	Marionette	INFO	Listening on port 65081
+1634407001792	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1634407004554	Marionette	INFO	Stopped listening on port 65081
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1634407082331	geckodriver	INFO	Listening on 127.0.0.1:65142
+1634407085408	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofile5sed8O"
+*** You are running in headless mode.
+1634407085774	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\aemre\\AppData\\Local\\Temp\\rust_mozprofile5sed8O\\search.json.mozlz4", (void 0)))
+1634407087181	Marionette	INFO	Listening on port 65150
+1634407087448	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1634407090352	Marionette	INFO	Stopped listening on port 65150
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
