@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as ffopt
 import time
 
-kulutus = 6.5
+kulutus = 6.2
 
 def scrapy():
     options = ffopt()
@@ -32,6 +32,16 @@ def kysy_matka():
         else:
             return luku
 
+def kysy_kulutus():
+    while True:
+        try:
+            luku = float(input("     Anna kulutus (l/km): "))
+        except ValueError:
+            print("     Arvon tulee olla pelkkä luku")
+            print("")
+        else:
+            return luku
+
 if __name__ == "__main__":
     print("")
     print("  Initializing..")
@@ -41,6 +51,8 @@ if __name__ == "__main__":
     print("")
     print("  Loading..")
     time.sleep(1)
+    print("")
+    kulutus = kysy_kulutus()
     print("")
     print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
     print("    ajettuna käyttäen ajantasaista dieselin keskihintaa:")
