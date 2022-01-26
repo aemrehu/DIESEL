@@ -3,7 +3,7 @@ from selenium.webdriver.firefox.options import Options as ffopt
 import time
 import os
 
-clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+clearConsole = lambda: os.system('cls' if os.name in ('nt','dos') else 'clear')
 cmd = 'mode 70,20'
 
 webAddress = "https://www.polttoaine.net/"
@@ -13,7 +13,6 @@ def scrapy(address, element):
     options = ffopt()
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
-
     driver.get(address)
     time.sleep(1)
     search = driver.find_element_by_css_selector(element)
@@ -38,7 +37,7 @@ def kysy_matka():
 def kysy_kulutus():
     while True:
         try:
-            luku = float(input("     Anna kulutus (l/km): "))
+            luku = float(input("     Anna keskikulutus (l/km): "))
         except ValueError:
             print("     Arvon tulee olla pelkkä luku")
             print("")
@@ -49,7 +48,6 @@ if __name__ == "__main__":
     os.system(cmd)
     print("")
     print("  Getting fuel cost..")
-
     keskihinta = float(scrapy(webAddress, webElement))
     clearConsole()
     print("")
@@ -59,12 +57,12 @@ if __name__ == "__main__":
     kulutus = kysy_kulutus()
     clearConsole()
     print("")
-    print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
-    print("    ajettuna käyttäen ajantasaista dieselin keskihintaa:")
+    print("    Tämä ohjelma laskee matkan hinnan diesel-autolla")
+    print("    ajettuna käyttäen ajantasaista dieselin keskihintaa.")
     print("    (Syötä 0km lopettaaksesi.)")
     print("")
     print("    Diesel: {}€/L".format(keskihinta))
-    print("    Kulutus {}L/100km".format(kulutus))
+    print("    Keskikulutus {}L/100km".format(kulutus))
     print("")
     while True:
         matka = kysy_matka()
