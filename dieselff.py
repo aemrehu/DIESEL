@@ -3,25 +3,23 @@ from selenium.webdriver.firefox.options import Options as ffopt
 import time
 import os
 
-kulutus = 6.2
-
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
-
 cmd = 'mode 70,20'
 
-def scrapy():
+webAddress = "https://www.polttoaine.net/"
+webElement = "#Halvin_Kallein > tbody > tr:nth-child(2) > td:nth-child(5)"
+
+def scrapy(address, element):
     options = ffopt()
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
 
-    driver.get("https://www.polttoaine.net/")
+    driver.get(address)
     time.sleep(1)
-    search = driver.find_element_by_css_selector(
-    "#Halvin_Kallein > tbody > tr:nth-child(2) > td:nth-child(5)"
-    )
-    keskih = search.get_attribute("innerText")
+    search = driver.find_element_by_css_selector(element)
+    result = search.get_attribute("innerText")
     driver.quit()
-    return keskih
+    return result
 
 def laske_hinta(kilsat):
     summa = (kulutus / 100) * kilsat * keskihinta
@@ -52,7 +50,7 @@ if __name__ == "__main__":
     print("")
     print("  Getting fuel cost..")
 
-    keskihinta = float(scrapy())
+    keskihinta = float(scrapy(webAddress, webElement))
     clearConsole()
     print("")
     print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
