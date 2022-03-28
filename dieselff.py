@@ -6,8 +6,8 @@ import os
 clearConsole = lambda: os.system('cls' if os.name in ('nt','dos') else 'clear')
 cmd = 'mode 70,20'
 
-webAddress = "https://www.polttoaine.net/"
-webElement = "#Halvin_Kallein > tbody > tr:nth-child(2) > td:nth-child(5)"
+webAddress = "https://www.polttoaine.net/Oulu"
+webElement = "#Hinnat > table > tbody > tr:nth-child(2) > td:nth-child(5)"
 
 def scrapy(address, element):
     options = ffopt()
