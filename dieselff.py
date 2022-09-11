@@ -3,27 +3,24 @@ from selenium.webdriver.firefox.options import Options as ffopt
 import time
 import os
 
-kulutus = 6.2
-
-clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
-
+clearConsole = lambda: os.system('cls' if os.name in ('nt','dos') else 'clear')
 cmd = 'mode 70,20'
 
-def scrapy():
+webAddress = "https://www.polttoaine.net/Oulu"
+webElement = "#Hinnat > table > tbody > tr:nth-child(2) > td:nth-child(5)"
+
+def scrapy(address, element):
     options = ffopt()
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
-
-    driver.get("https://www.polttoaine.net/")
+    driver.get(address)
     time.sleep(1)
-    search = driver.find_element_by_css_selector(
-    "#Halvin_Kallein > tbody > tr:nth-child(2) > td:nth-child(5)"
-    )
-    keskih = search.get_attribute("innerText")
+    search = driver.find_element_by_css_selector(element)
+    result = search.get_attribute("innerText")
     driver.quit()
-    return keskih
+    return result
 
-def laske_hinta(kilsat):
+def laske_hinta(kilsat, kulutus, keskihinta):
     summa = (kulutus / 100) * kilsat * keskihinta
     return summa
 
@@ -40,7 +37,7 @@ def kysy_matka():
 def kysy_kulutus():
     while True:
         try:
-            luku = float(input("     Anna kulutus (l/km): "))
+            luku = float(input("     Anna keskikulutus (l/km): "))
         except ValueError:
             print("     Arvon tulee olla pelkkä luku")
             print("")
@@ -50,9 +47,8 @@ def kysy_kulutus():
 if __name__ == "__main__":
     os.system(cmd)
     print("")
-    print("  Getting fuel cost..")
-
-    keskihinta = float(scrapy())
+    print("  Haetaan dieselin hintaa..")
+    keskihinta = float(scrapy(webAddress, webElement))
     clearConsole()
     print("")
     print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
@@ -61,20 +57,25 @@ if __name__ == "__main__":
     kulutus = kysy_kulutus()
     clearConsole()
     print("")
-    print("    Tämä ohjelma laskee matkan hinnan Volvo S80 D5 automaatilla")
-    print("    ajettuna käyttäen ajantasaista dieselin keskihintaa:")
-    print("    (Syötä 0km lopettaaksesi.)")
+    print("    Tämä ohjelma laskee matkan hinnan diesel-autolla")
+    print("    ajettuna käyttäen ajantasaista dieselin keskihintaa.")
+    print("    (Syötä 0km lopettaaksesi ja 999km vaihtaaksesi kulutuksen.)")
     print("")
     print("    Diesel: {}€/L".format(keskihinta))
-    print("    Kulutus {}L/100km".format(kulutus))
+    print("    Keskikulutus {}L/100km".format(kulutus))
     print("")
     while True:
         matka = kysy_matka()
         if matka == 0:
             break
+        elif matka == 999:
+            print("")
+            kulutus = kysy_kulutus()
+            print("")
         else:
-            hinta = float(laske_hinta(matka))
+            hinta = float(laske_hinta(matka, kulutus, keskihinta))
             time.sleep(0.01)
             print("")
             print("      Matkasi hinta on noin {:.2f}€".format(hinta))
             print("")
+    
